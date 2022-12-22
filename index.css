@@ -1,0 +1,27 @@
+/* @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap'); */
+body {
+  padding: 0;
+  margin: 0;
+}
+/* .main_container{
+background-image: url('pks.jpg');
+background-size: contain;
+background-repeat: no-repeat;
+/* width: 200px; */
+/* height: 100vh; */
+
+
+
+#cv-template{
+  display: none;
+}
+.myimg {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+}
+.backgrund {
+  background-color: cyan;
+}
+

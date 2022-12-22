@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javaScript</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <!-- cv-form -->
+      <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center my-2">By learning puropse</p>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Prersonal information</h3>
+
+            <div class="fome-group mt-2">
+              <label for="nameField">Your Name</label>
+              <input
+                type="text"
+                id="nameField"
+                placeholder="Enter Name"
+                class="form-control"
+              />
+            </div>
+
+            <div class="fome-group mt-2">
+              <label for="contactField">Your Phno</label>
+              <input
+                type="text"
+                id="contactField"
+                placeholder="Enter Phno"
+                class="form-control"
+              />
+            </div>
+
+            <div class="fome-group mt-2">
+              <label for="address Field">Your Address</label>
+              <textarea
+              id="addressField"
+                type="text"
+                placeholder="Enter Address"
+                class="form-control"
+              ></textarea>
+            </div>
+            <div class="form-group mt-2">
+              <label for="">select your profiel picture</label>
+              <input type="file" id="imgField" class="form-control">
+            </div>
+            <p class="text-secondary">Important Social media</p>
+
+            <div class="fome-group mt-2">
+              <label for="fbField">Facebook</label>
+              <input
+                type="text"
+                id="fbField"
+                placeholder="Facebook-account"
+                class="form-control"
+              />
+            </div>
+
+            <div class="fome-group mt-2">
+              <label for="instaField">Instagram</label>
+              <input
+                type="text"
+                id="instaField"
+                placeholder="Instagram-account"
+                class="form-control"
+              />
+            </div>
+
+            <div class="fome-group mt-2">
+              <label for="linkdinField">Linkden</label>
+              <input
+                type="text"
+                id="linkdinField"
+                placeholder="linkden-account"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h3>Professional Indformation</h3>
+
+            <div class="fome-group mt-2">
+              <label for="Objective Field">Objective</label>
+              <textarea
+                id="objectiveField"
+                type="text"
+                placeholder="Enter hear"
+                class="form-control"
+                rows="5"
+              ></textarea>
+            </div>
+
+            <div class="fome-group mt-2" id="we">
+              <label for="">Work Experience</label>
+              <textarea
+                type="text"
+                placeholder="Enter hear"
+                class="form-control weField"
+                rows="3"
+              ></textarea>
+              <!-- new textarea -->
+              <div class="container text-center mt-2" id="weAddButton">
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="addNewWorkField()"
+                >
+                  Add More
+                </button>
+              </div>
+            </div>
+
+            <div class="fome-group mt-2" id="eq">
+              <label for="">Academic Qulification</label>
+              <textarea
+                type="text";
+                placeholder="Enter hear";
+                class="form-control aqField";
+                rows="3";
+              ></textarea>
+              <!-- new textarea -->
+              <div class="container text-center mt-2" id="eqAddButton">
+                <button class="btn btn-primary btn-sm" onclick="addNewAcau()">
+                  Add More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center mt-3">
+          <button class="btn btn-primary btn-sm" onclick="generateCV()">
+            Generate C.V
+          </button>
+        </div>
+      </div>
+    
+    <!-- cv-templeate -->
+
+
+    <div class="container" id="cv-template">
+      <div class="row">
+        <div class="col-md-4 text-center py-5 backgrund">
+          <!-- first colum -->
+          <img src="pks.jpg" alt="" class="img-fluid myimg" id="imgTemp" />
+          <div class="container">
+            <p id="nameT1">Vijay kumar saini</p>
+            <p id="contactT">+6385366616</p>
+            <p id="addressT">Devipura road near axis bank</p>
+            <hr />
+            <p>
+              <a id="fbT" href="#1">https:facebook.com</a>
+            </p>
+            <p>
+              <a id="instaT" href="#2">https:instgram.com</a>
+            </p>
+            <p>
+              <a id="linkedT" href="#3">https:linkden.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <h1 id="nameT2" class="text-cneter" style="font-weight: 980">
+            Vijay saini
+          </h1>
+
+          <!-- objective-card -->
+          <div class="card mt-4">
+            <div class="card-header backgrund">
+              <h3>objective</h3>
+            </div>
+            <div class="card-body">
+              <p id="objectiveT">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+                commodi amet distinctio quasi ea aperiam aliquam aut rem!
+                Deleniti veniam repudiandae est exercitationem id, voluptates
+                provident at excepturi aspernatur. Temporibus ex facilis totam
+                blanditiis obcaecati harum recusandae illum natus modi, deleniti
+                quas sint reiciendis. Adipisci eaque facilis commodi ipsam
+                voluptas!
+              </p>
+            </div>
+          </div>
+          <!-- work-experience -->
+          <div class="card mt-4">
+            <div class="card-header backgrund">
+              <h3>Work Experience</h3>
+            </div>
+            <div class="card-body">
+              <ul id="weT">
+                <li>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Totam, deserunt.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Totam, deserunt.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Totam, deserunt.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- academic Qulification -->
+          <div class="card mt-4">
+            <div class="card-header backgrund">
+              <h3>Academic Qulification</h3>
+            </div>
+            <div class="card-body">
+              <ul id="aqT">
+                <li>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Totam, deserunt.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Totam, deserunt.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Totam, deserunt.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="container mt-3 text-center">
+            <button class="btn backgrund" onclick="printCV()">Print C.V</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="jscript.js"></script>
+  </body>
+</html>
